@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/circle_detector.dir/main.cpp.o  -o circle_detector 

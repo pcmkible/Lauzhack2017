@@ -37,3 +37,7 @@ Idea number 6:
 
 Investigate atm machines. There is for sure something here, I did not look into this.
 
+
+Idea number 7:
+
+Investigate ping-pong scheme. Two guys sending (large) amounts of money to each other.
