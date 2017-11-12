@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/sort_data.dir/sort_data.cpp.o  -o sort_data -lboost_filesystem -lboost_system -lpthread 
