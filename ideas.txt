@@ -1,0 +1,39 @@
+
+Idea number 1:
+
+Calculate number of incoming transactions. In case there is a spike, regard these transactions as illegal.
+
+Status: to be implemented in C++ code, python results look very good.
+
+
+Idea number 2:
+
+Calculate number of outgoing transactions. In case there is a spike, there might be a money laundering scheme.
+
+Status: not done.
+
+
+
+Idea number 3:
+
+At every time calculate the amount of money certain person has. In case he has a lot of money(or lost a lot), it is a sign
+of money laundering or extortion.
+
+Status: done in python, to be done in C++.
+
+Idea number 4:
+
+Investigate the topology of the graph. Find circles which indicate money laundering. Done in C++, results probably good.
+
+
+Idea number 5:
+
+Visualize every single thing we do. Excell! 
+
+Status: To be done in last hour probably.
+
+
+Idea number 6:
+
+Investigate atm machines. There is for sure something here, I did not look into this.
+
