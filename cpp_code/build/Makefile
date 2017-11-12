@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/aleksa/Lauzhack2017/cpp_code/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named spike_in_outgoing_transactions
+
+# Build rule for target.
+spike_in_outgoing_transactions: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 spike_in_outgoing_transactions
+.PHONY : spike_in_outgoing_transactions
+
+# fast build rule for target.
+spike_in_outgoing_transactions/fast:
+	$(MAKE) -f CMakeFiles/spike_in_outgoing_transactions.dir/build.make CMakeFiles/spike_in_outgoing_transactions.dir/build
+.PHONY : spike_in_outgoing_transactions/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -122,6 +135,19 @@ main: cmake_check_build_system
 main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named spike_in_incoming_transactions
+
+# Build rule for target.
+spike_in_incoming_transactions: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 spike_in_incoming_transactions
+.PHONY : spike_in_incoming_transactions
+
+# fast build rule for target.
+spike_in_incoming_transactions/fast:
+	$(MAKE) -f CMakeFiles/spike_in_incoming_transactions.dir/build.make CMakeFiles/spike_in_incoming_transactions.dir/build
+.PHONY : spike_in_incoming_transactions/fast
 
 main.o: main.cpp.o
 
@@ -150,18 +176,80 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+spike_in_incoming_transactions.o: spike_in_incoming_transactions.cpp.o
+
+.PHONY : spike_in_incoming_transactions.o
+
+# target to build an object file
+spike_in_incoming_transactions.cpp.o:
+	$(MAKE) -f CMakeFiles/spike_in_incoming_transactions.dir/build.make CMakeFiles/spike_in_incoming_transactions.dir/spike_in_incoming_transactions.cpp.o
+.PHONY : spike_in_incoming_transactions.cpp.o
+
+spike_in_incoming_transactions.i: spike_in_incoming_transactions.cpp.i
+
+.PHONY : spike_in_incoming_transactions.i
+
+# target to preprocess a source file
+spike_in_incoming_transactions.cpp.i:
+	$(MAKE) -f CMakeFiles/spike_in_incoming_transactions.dir/build.make CMakeFiles/spike_in_incoming_transactions.dir/spike_in_incoming_transactions.cpp.i
+.PHONY : spike_in_incoming_transactions.cpp.i
+
+spike_in_incoming_transactions.s: spike_in_incoming_transactions.cpp.s
+
+.PHONY : spike_in_incoming_transactions.s
+
+# target to generate assembly for a file
+spike_in_incoming_transactions.cpp.s:
+	$(MAKE) -f CMakeFiles/spike_in_incoming_transactions.dir/build.make CMakeFiles/spike_in_incoming_transactions.dir/spike_in_incoming_transactions.cpp.s
+.PHONY : spike_in_incoming_transactions.cpp.s
+
+spike_in_outgoing_transactions.o: spike_in_outgoing_transactions.cpp.o
+
+.PHONY : spike_in_outgoing_transactions.o
+
+# target to build an object file
+spike_in_outgoing_transactions.cpp.o:
+	$(MAKE) -f CMakeFiles/spike_in_outgoing_transactions.dir/build.make CMakeFiles/spike_in_outgoing_transactions.dir/spike_in_outgoing_transactions.cpp.o
+.PHONY : spike_in_outgoing_transactions.cpp.o
+
+spike_in_outgoing_transactions.i: spike_in_outgoing_transactions.cpp.i
+
+.PHONY : spike_in_outgoing_transactions.i
+
+# target to preprocess a source file
+spike_in_outgoing_transactions.cpp.i:
+	$(MAKE) -f CMakeFiles/spike_in_outgoing_transactions.dir/build.make CMakeFiles/spike_in_outgoing_transactions.dir/spike_in_outgoing_transactions.cpp.i
+.PHONY : spike_in_outgoing_transactions.cpp.i
+
+spike_in_outgoing_transactions.s: spike_in_outgoing_transactions.cpp.s
+
+.PHONY : spike_in_outgoing_transactions.s
+
+# target to generate assembly for a file
+spike_in_outgoing_transactions.cpp.s:
+	$(MAKE) -f CMakeFiles/spike_in_outgoing_transactions.dir/build.make CMakeFiles/spike_in_outgoing_transactions.dir/spike_in_outgoing_transactions.cpp.s
+.PHONY : spike_in_outgoing_transactions.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... main"
+	@echo "... spike_in_outgoing_transactions"
 	@echo "... edit_cache"
+	@echo "... main"
+	@echo "... rebuild_cache"
+	@echo "... spike_in_incoming_transactions"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... spike_in_incoming_transactions.o"
+	@echo "... spike_in_incoming_transactions.i"
+	@echo "... spike_in_incoming_transactions.s"
+	@echo "... spike_in_outgoing_transactions.o"
+	@echo "... spike_in_outgoing_transactions.i"
+	@echo "... spike_in_outgoing_transactions.s"
 .PHONY : help
 
 

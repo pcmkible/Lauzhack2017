@@ -79,3 +79,13 @@ message (STATUS "Build type: " ${CMAKE_BUILD_TYPE})
 add_executable (main main.cpp)
 target_link_libraries (main ${Boost_LIBRARIES}  ${LIBS} -lpthread)
 
+#-------------------------------------------------------------------------------
+# Add the executable 'main'
+#-------------------------------------------------------------------------------
+add_executable (spike_in_incoming_transactions spike_in_incoming_transactions.cpp)
+target_link_libraries (spike_in_incoming_transactions ${Boost_LIBRARIES}  ${LIBS} -lpthread)
+#-------------------------------------------------------------------------------
+# Add the executable 'main'
+#-------------------------------------------------------------------------------
+add_executable (spike_in_outgoing_transactions spike_in_outgoing_transactions.cpp)
+target_link_libraries (spike_in_outgoing_transactions ${Boost_LIBRARIES}  ${LIBS} -lpthread)
