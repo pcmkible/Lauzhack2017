@@ -30,6 +30,7 @@ Display* Display::getInstance(){
 }
 
 Display::Display(int width, int height): width(width), height(height){
+
     vertexShaderText = "uniform mat4 VP;\n"
         "uniform mat4 M;\n"
         "uniform vec3 vCol;\n"
@@ -55,7 +56,17 @@ Display::Display(int width, int height): width(width), height(height){
 }
 
 void Display::pressed(float x, float y){
-    
+    int i = -1;
+    if(actualNode->showingKids){
+        i = actualNode->checkChildrenClicked(x, y);
+    }
+    if(i == -1){
+        if(actualNode->gotClicked(x, y)){
+            actualNode->toggle();
+        }
+    } else {
+        //Triger node replacement
+    }
 }
 
 void Display::draw(){
@@ -107,7 +118,11 @@ void Display::draw(){
 
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-    Node *mNode = new Node(&program);
+    glEnable (GL_BLEND); glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
+
+    StartFontTexture();
+
+    actualNode = new Node(&program, std::vector<float>{0,0}, true,1000);
 
     while (!glfwWindowShouldClose(window)) {
         
@@ -116,7 +131,7 @@ void Display::draw(){
         glUseProgram(program);
         glUniformMatrix4fv(mvp_location, 1, GL_FALSE, (const GLfloat*) mvp);
         
-        mNode->draw();
+        actualNode->draw();
         
         glfwSwapBuffers(window);
         glfwPollEvents();

@@ -33,9 +33,6 @@ public:
 
         //decode
         unsigned error = lodepng::decode(image, width, height, fileName);
-
-        std::cout << "image size: " << image.size() << std::endl;
-
         
         // Create one OpenGL texture
         GLuint textureID;

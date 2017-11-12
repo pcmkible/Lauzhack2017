@@ -9,6 +9,9 @@
 #include <GLFW/glfw3.h>
 #include <thread>
 #include <string>
+#include "brate/Node.h"
+
+#include "brate/txtresources.h"
 
 class Display{
 public:

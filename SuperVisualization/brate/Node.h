@@ -3,19 +3,34 @@
 
 #include <vector>
 #include "brate/Element.h"
+#include "brate/txtresources.h"
 
 class Node: public Element{
 public:
-    Node(GLuint *pProgram);
+    Node(GLuint *pProgram, std::vector<float> pPosition, bool isActual, float amount);
     void draw();
+    bool gotClicked(float x, float y);
+    int checkChildrenClicked(float x, float y);
+    void toggle(void);
+    bool showingKids;
 private:
     GLuint vertex_buffer, tex, texSampler;
     bool firstDrawn;
     float startTime;
 
-    float radius = 0.5f;
+    std::vector<Node *> children;
+
+    std::vector<float> position;
+
+    StringWithLimits *title;
+
+    float scale;
     std::vector<float> color;
-    static const int nSides = 50;
+    float money;
+    bool triggeredChange = false;
+    bool isInTransition = false;
+    float transitionTime;
+    float threshold = 1.0f;
 };
 
 #endif //INCLUDE_NODE_H
