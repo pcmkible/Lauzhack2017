@@ -1,16 +1,17 @@
-
 Idea number 1:
 
 Calculate number of incoming transactions. In case there is a spike, regard these transactions as illegal.
 
-Status: to be implemented in C++ code, python results look very good.
+Status: Implemented in C++ code.
+
+Assigned to: Aleksa
 
 
 Idea number 2:
 
 Calculate number of outgoing transactions. In case there is a spike, there might be a money laundering scheme.
 
-Status: not done.
+Status: Implemented in C++ code.
 
 
 
@@ -21,9 +22,13 @@ of money laundering or extortion.
 
 Status: done in python, to be done in C++.
 
+Assigned to Aleksa.
+
 Idea number 4:
 
 Investigate the topology of the graph. Find circles which indicate money laundering. Done in C++, results probably good.
+
+Assigned to: Aleksa
 
 
 Idea number 5:
